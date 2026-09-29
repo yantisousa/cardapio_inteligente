@@ -6,7 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CheckoutRequest extends FormRequest
 {
-    public function authorize(): bool { return true; }
+    public function authorize(): bool
+    {
+        return true;
+    }
 
     public function rules(): array
     {
@@ -23,6 +26,9 @@ class CheckoutRequest extends FormRequest
             'delivery_address.city' => ['required_if:fulfillment_type,delivery', 'nullable', 'string', 'max:120'],
             'delivery_address.state' => ['required_if:fulfillment_type,delivery', 'nullable', 'string', 'size:2'],
             'delivery_address.postal_code' => ['required_if:fulfillment_type,delivery', 'nullable', 'string', 'max:12'],
+            'delivery_address.label' => ['nullable', 'string', 'max:60'],
+            'delivery_address.complement' => ['nullable', 'string', 'max:120'],
+            'delivery_address.reference' => ['nullable', 'string', 'max:190'],
             'notes' => ['nullable', 'string', 'max:1000'],
             'items' => ['required', 'array', 'min:1', 'max:50'],
             'items.*.product_id' => ['required', 'uuid'],

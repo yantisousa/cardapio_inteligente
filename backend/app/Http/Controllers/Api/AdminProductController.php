@@ -25,6 +25,7 @@ class AdminProductController extends Controller
                 'slug' => $this->uniqueSlug($data['name']),
             ]);
             $this->syncOptions($product, $data);
+
             return $product;
         });
 
@@ -52,7 +53,17 @@ class AdminProductController extends Controller
     public function destroy(string $product): JsonResponse
     {
         Product::query()->findOrFail($product)->delete();
+
         return response()->json(status: 204);
+    }
+
+    public function updateAvailability(Request $request, string $product): JsonResponse
+    {
+        $data = $request->validate(['is_sold_out' => ['required', 'boolean']]);
+        $product = Product::query()->findOrFail($product);
+        $product->update($data);
+
+        return response()->json(['product' => $product->fresh()->load('variants', 'modifierGroups.options')]);
     }
 
     private function validated(Request $request): array
@@ -64,6 +75,7 @@ class AdminProductController extends Controller
             'image_url' => ['nullable', 'url', 'max:2048'],
             'price_cents' => ['required', 'integer', 'min:0', 'max:10000000'],
             'active' => ['required', 'boolean'],
+            'is_sold_out' => ['sometimes', 'boolean'],
             'availability' => ['nullable', 'array'],
             'variants' => ['present', 'array', 'max:20'],
             'variants.*.name' => ['required', 'string', 'max:100'],

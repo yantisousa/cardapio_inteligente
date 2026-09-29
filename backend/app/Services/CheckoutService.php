@@ -4,11 +4,13 @@ namespace App\Services;
 
 use App\Jobs\OrderPlaced;
 use App\Models\Customer;
+use App\Models\CustomerAddress;
 use App\Models\ModifierOption;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Tenant;
 use App\Models\TenantSetting;
+use App\Support\PhoneNumber;
 use App\Tenancy\TenantContext;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -16,32 +18,52 @@ use Illuminate\Validation\ValidationException;
 
 class CheckoutService
 {
+    public function __construct(private readonly StoreAvailabilityService $availability) {}
+
     public function create(array $payload, string $idempotencyKey): array
     {
         $tenantId = app(TenantContext::class)->id();
 
         return DB::transaction(function () use ($payload, $idempotencyKey, $tenantId) {
-            Tenant::query()->whereKey($tenantId)->lockForUpdate()->firstOrFail();
+            $tenant = Tenant::query()->with('plan')->whereKey($tenantId)->lockForUpdate()->firstOrFail();
 
             if ($existing = Order::where('idempotency_key', $idempotencyKey)->first()) {
                 return ['order' => $existing->load('items.modifiers', 'payments'), 'replayed' => true];
             }
 
             $settings = TenantSetting::query()->firstOrFail();
+            $operation = $this->availability->status($settings);
+            if (! $operation['accepting_orders']) {
+                throw ValidationException::withMessages(['store' => $operation['message']]);
+            }
             $this->validateFulfillment($payload['fulfillment_type'], $settings);
+            $this->validatePayment($payload['payment_method'], $settings, $tenant);
 
             $pricedItems = collect($payload['items'])->map(fn (array $item) => $this->priceItem($item));
             $subtotal = $pricedItems->sum('total_cents');
-            $deliveryFee = $payload['fulfillment_type'] === 'delivery' ? $settings->delivery_fee_cents : 0;
+            $deliveryFee = $payload['fulfillment_type'] === 'delivery'
+                ? $this->deliveryFee($payload['delivery_address'], $settings)
+                : 0;
 
             if ($subtotal < $settings->minimum_order_cents) {
                 throw ValidationException::withMessages(['items' => 'O subtotal não atingiu o pedido mínimo da loja.']);
             }
 
+            $customerPhone = PhoneNumber::normalize($payload['customer']['phone']);
+            if (strlen($customerPhone) < 10 || strlen($customerPhone) > 11) {
+                throw ValidationException::withMessages(['customer.phone' => 'Informe um telefone válido com DDD.']);
+            }
+
             $customer = Customer::updateOrCreate(
-                ['phone' => $payload['customer']['phone']],
+                ['phone' => $customerPhone],
                 ['name' => $payload['customer']['name'], 'email' => $payload['customer']['email'] ?? null],
             );
+
+            $payload['customer']['phone'] = $customerPhone;
+
+            if ($payload['fulfillment_type'] === 'delivery') {
+                $this->saveCustomerAddress($customer, $payload['delivery_address']);
+            }
 
             $order = Order::create([
                 'public_id' => (string) Str::uuid(),
@@ -60,6 +82,7 @@ class CheckoutService
                 'notes' => $payload['notes'] ?? null,
                 'idempotency_key' => $idempotencyKey,
                 'placed_at' => now(),
+                'scheduled_for' => $operation['will_schedule'] ? $operation['scheduled_for'] : null,
             ]);
 
             foreach ($pricedItems as $priced) {
@@ -88,6 +111,7 @@ class CheckoutService
         $product = Product::with(['variants', 'modifierGroups.options'])
             ->whereKey($input['product_id'])
             ->where('active', true)
+            ->where('is_sold_out', false)
             ->lockForUpdate()
             ->first();
 
@@ -144,5 +168,74 @@ class CheckoutService
         if (($type === 'delivery' && ! $settings->accepts_delivery) || ($type === 'pickup' && ! $settings->accepts_pickup)) {
             throw ValidationException::withMessages(['fulfillment_type' => 'Modalidade indisponível nesta loja.']);
         }
+    }
+
+    private function validatePayment(string $method, TenantSetting $settings, Tenant $tenant): void
+    {
+        if ($method === 'pix' && (! $tenant->hasFeature('manual_pix') || blank($settings->pix_key))) {
+            throw ValidationException::withMessages([
+                'payment_method' => 'O Pix ainda não está configurado para esta loja.',
+            ]);
+        }
+    }
+
+    private function deliveryFee(array $address, TenantSetting $settings): int
+    {
+        $zones = collect($settings->delivery_zones ?? [])->filter(
+            fn (array $zone) => ($zone['active'] ?? true) && filled($zone['neighborhood'] ?? null)
+        );
+
+        if ($zones->isEmpty()) {
+            return (int) $settings->delivery_fee_cents;
+        }
+
+        $zone = $zones->first(function (array $zone) use ($address): bool {
+            if ($this->normalizeLocation($zone['neighborhood']) !== $this->normalizeLocation($address['neighborhood'])) {
+                return false;
+            }
+            if (filled($zone['city'] ?? null) && $this->normalizeLocation($zone['city']) !== $this->normalizeLocation($address['city'])) {
+                return false;
+            }
+
+            return blank($zone['state'] ?? null) || strtoupper(trim($zone['state'])) === strtoupper(trim($address['state']));
+        });
+
+        if (! $zone) {
+            throw ValidationException::withMessages([
+                'delivery_address.neighborhood' => 'Este endereço está fora da área de entrega da loja.',
+            ]);
+        }
+
+        return (int) $zone['fee_cents'];
+    }
+
+    private function normalizeLocation(string $value): string
+    {
+        return Str::lower(Str::ascii(preg_replace('/\s+/', ' ', trim($value))));
+    }
+
+    private function saveCustomerAddress(Customer $customer, array $input): void
+    {
+        $address = [
+            'label' => trim($input['label'] ?? '') ?: 'Principal',
+            'street' => trim($input['street']),
+            'number' => trim($input['number']),
+            'complement' => filled($input['complement'] ?? null) ? trim($input['complement']) : null,
+            'neighborhood' => trim($input['neighborhood']),
+            'city' => trim($input['city']),
+            'state' => strtoupper(trim($input['state'])),
+            'postal_code' => preg_replace('/\D+/', '', $input['postal_code']),
+            'reference' => filled($input['reference'] ?? null) ? trim($input['reference']) : null,
+        ];
+
+        CustomerAddress::query()->updateOrCreate(
+            [
+                'customer_id' => $customer->id,
+                'street' => $address['street'],
+                'number' => $address['number'],
+                'postal_code' => $address['postal_code'],
+            ],
+            $address,
+        );
     }
 }

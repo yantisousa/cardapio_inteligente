@@ -4,20 +4,22 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Domain;
+use App\Models\Plan;
 use App\Models\Product;
 use App\Models\Tenant;
 use App\Models\TenantSetting;
 use App\Models\User;
 use App\Tenancy\TenantContext;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $tenant = Tenant::create(['name' => 'Forno & Afeto', 'slug' => 'forno-afeto', 'status' => 'active']);
+        $basicPlan = Plan::query()->where('slug', 'basic')->firstOrFail();
+        $tenant = Tenant::create(['plan_id' => $basicPlan->id, 'name' => 'Forno & Afeto', 'slug' => 'forno-afeto', 'status' => 'active']);
         Domain::create(['tenant_id' => $tenant->id, 'host' => 'demo.localhost', 'is_primary' => true, 'verified_at' => now()]);
         app(TenantContext::class)->set($tenant);
 
@@ -28,10 +30,21 @@ class DatabaseSeeder extends Seeder
             'accent_color' => '#183c2d',
             'address' => ['street' => 'Rua das Oliveiras', 'number' => '184', 'city' => 'São Paulo', 'state' => 'SP'],
             'business_hours' => ['summary' => 'Hoje, 18h às 23h'],
+            'storefront_content' => [
+                'hero_badge' => 'Estamos abertos',
+                'hero_title' => 'Comida que abraça a',
+                'hero_highlight' => 'mesa.',
+                'hero_note' => 'feito com afeto ↗',
+                'menu_title' => 'Escolha seu momento favorito',
+                'story_eyebrow' => 'Nossa cozinha',
+                'story_title' => 'Tem coisas que só o tempo sabe fazer.',
+                'story_text' => 'Fermentação lenta, ingredientes de perto e receitas que carregam histórias. Aqui, cada pedido começa muito antes de você escolher.',
+                'story_since' => 'desde 2018',
+            ],
             'delivery_fee_cents' => 690,
             'minimum_order_cents' => 2500,
             'estimated_delivery_minutes' => 42,
-            'pix_key' => 'pedido@fornoeafeto.com.br',
+            'pix_key' => null,
         ]);
 
         $pizzas = Category::create(['name' => 'Pizzas artesanais', 'slug' => 'pizzas', 'position' => 1]);

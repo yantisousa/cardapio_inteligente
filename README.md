@@ -32,7 +32,9 @@ npm run dev
 
 Acesse `http://localhost:5173`. O Vite encaminha `/api` para o Laravel em `127.0.0.1:8000`. As portas podem ser alteradas com `npm run dev -- --port 5181` e `php artisan serve --port=8011`; nessa instalação, esses serviços estão disponíveis em `http://127.0.0.1:5181` e `http://127.0.0.1:8011`. Em desenvolvimento, a interface envia `X-Tenant-Host: demo.localhost`; esse cabeçalho é ignorado fora dos ambientes `local` e `testing`.
 
-O frontend possui dados de demonstração e continua navegável se a API estiver desligada. Após `migrate --seed`, passa a consumir o catálogo real. O painel está em `http://localhost:5173/admin` (ou `http://127.0.0.1:5181/admin` nesta instalação). Nele, proprietários e gerentes podem criar categorias, produtos, variações e adicionais, além de alterar identidade visual, entrega, retirada, Pix e endereço da loja.
+O frontend consome exclusivamente o tenant resolvido pela API; se ela estiver indisponível, exibe um erro claro em vez de misturar dados de demonstração com a loja real. Após `migrate --seed`, o painel está em `http://localhost:5173/admin` (ou `http://127.0.0.1:5181/admin` nesta instalação). Nele, proprietários e gerentes podem criar categorias, produtos, variações e adicionais, além de alterar identidade visual, conteúdo da vitrine, entrega, retirada, Pix e endereço da loja.
+
+Cada loja é resolvida pelo domínio cadastrado em `domains`. Em desenvolvimento, selecione um tenant sem alterar o arquivo hosts usando `http://127.0.0.1:5181/?tenant=demo.localhost`; os links entre vitrine e painel preservam essa seleção. As sessões administrativas do navegador também são isoladas por domínio.
 
 Usuário de demonstração da API administrativa:
 
@@ -40,6 +42,18 @@ Usuário de demonstração da API administrativa:
 admin@demo.test
 password
 ```
+
+## Site comercial da Triunfo Menu
+
+A página comercial está em `http://127.0.0.1:5173/triunfo-menu` (use a porta do Vite em execução). A vitrine da loja em `/` e o painel em `/admin` continuam independentes.
+
+- Plano anunciado: **Basic — R$ 149,90/mês**.
+- Botões de contratação: WhatsApp **(85) 98990-7530**, com mensagem preenchida; não enviam mensagens automaticamente.
+- Prévia interativa com abas de pedidos, cardápio e personalização de cores. Os dados são ilustrativos e não criam pedidos reais.
+- Página e estilos em `frontend/src/TriunfoMenu.jsx` e `frontend/src/TriunfoMenu.css`; marca vetorial em `frontend/public/triunfo-mark.svg`.
+- A oferta comercial não altera preços de assinaturas no banco nem implementa cobrança automática. A contratação acontece com a equipe pelo WhatsApp.
+
+Em produção, configure o servidor do frontend para entregar `index.html` nas rotas da SPA, incluindo `/triunfo-menu`.
 
 ## Endpoints principais
 

@@ -11,6 +11,23 @@ class Tenant extends Model
 
     protected $guarded = [];
 
-    public function settings() { return $this->hasOne(TenantSetting::class); }
-    public function domains() { return $this->hasMany(Domain::class); }
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
+
+    public function settings()
+    {
+        return $this->hasOne(TenantSetting::class);
+    }
+
+    public function domains()
+    {
+        return $this->hasMany(Domain::class);
+    }
+
+    public function hasFeature(string $feature): bool
+    {
+        return $this->plan?->hasFeature($feature) ?? false;
+    }
 }

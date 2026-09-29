@@ -6,19 +6,14 @@ use App\Models\Concerns\BelongsToTenant;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class CustomerAddress extends Model
 {
     use BelongsToTenant, HasUuids;
 
     protected $guarded = [];
 
-    public function addresses()
+    public function customer()
     {
-        return $this->hasMany(CustomerAddress::class);
-    }
-
-    public function orders()
-    {
-        return $this->hasMany(Order::class);
+        return $this->belongsTo(Customer::class);
     }
 }

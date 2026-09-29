@@ -23,7 +23,8 @@ class OrderController extends Controller
 
     public function show(Request $request, string $publicId): JsonResponse
     {
-        $order = Order::with('items.modifiers', 'events')->where('public_id', $publicId)->firstOrFail();
+        $order = Order::with('items.modifiers', 'payments', 'events')->where('public_id', $publicId)->firstOrFail();
+
         return response()->json(['order' => $order]);
     }
 }

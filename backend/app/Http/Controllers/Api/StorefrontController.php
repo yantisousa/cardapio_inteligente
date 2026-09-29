@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\TenantSetting;
+use App\Services\StoreAvailabilityService;
+use App\Tenancy\TenantContext;
 use Illuminate\Http\JsonResponse;
 
 class StorefrontController extends Controller
 {
-    public function __invoke(): JsonResponse
+    public function __invoke(TenantContext $tenantContext, StoreAvailabilityService $availability): JsonResponse
     {
         $settings = TenantSetting::query()->firstOrFail();
         $categories = Category::query()
@@ -21,6 +23,14 @@ class StorefrontController extends Controller
             ->orderBy('position')
             ->get();
 
-        return response()->json(['store' => $settings, 'categories' => $categories]);
+        $tenant = $tenantContext->tenant()->loadMissing('plan');
+
+        return response()->json([
+            'tenant' => $tenant->only('id', 'name', 'slug'),
+            'plan' => $tenant->plan?->only('name', 'slug', 'features'),
+            'store' => $settings,
+            'operation' => $availability->status($settings),
+            'categories' => $categories,
+        ]);
     }
 }

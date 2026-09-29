@@ -1,0 +1,22 @@
+
+> triunfo-menu-web@0.0.0 dev
+> vite --host 127.0.0.1 --port 5173
+
+
+  VITE v8.3.1  ready in 2792 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+  ➜  press h + enter to show help
+21:05:55 [vite] (client) hmr update /src/App.jsx
+21:05:55 [vite] (client) hmr update /src/App.css
+21:11:57 [vite] (client) hmr update /src/App.css
+21:17:00 [vite] (client) hmr update /src/App.jsx
+21:20:23 [vite] (client) hmr update /src/App.jsx
+21:20:50 [vite] (client) hmr update /src/App.css
+21:24:20 [vite] (client) hmr update /src/App.jsx
+21:41:36 [vite] (client) page reload src/main.jsx
+21:41:37 [vite] (client) page reload index.html
+21:41:37 [vite] (client) page reload public/triunfo-mark.svg
+21:41:38 [vite] (client) page reload src/TriunfoMenu.jsx
+21:43:01 [vite] (client) hmr update /src/main.jsx
+21:45:30 [vite] (client) hmr update /src/TriunfoMenu.css
