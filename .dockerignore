@@ -1,0 +1,17 @@
+**/node_modules
+**/vendor
+**/dist
+**/.env
+**/.env.*
+!.env.production.example
+.git
+.runlogs
+composer-cache
+backend/tests
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/bootstrap/cache/*.php
+backend/.phpunit.result.cache
+backend/public/hot

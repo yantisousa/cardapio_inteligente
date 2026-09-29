@@ -1,0 +1,138 @@
+# Produção (VPS). Uso:
+#   cp .env.production.example .env   # e preencha os valores
+#   docker compose -f docker-compose.prod.yml up -d --build
+# Passo a passo completo em DEPLOY.md.
+
+x-backend-build: &backend-build
+  context: .
+  dockerfile: docker/backend/Dockerfile
+
+x-laravel-env: &laravel-env
+  APP_NAME: Triunfo Menu
+  APP_ENV: production
+  APP_DEBUG: "false"
+  APP_KEY: ${APP_KEY:?defina APP_KEY no .env}
+  APP_URL: https://${DOMAIN:?defina DOMAIN no .env}
+  APP_LOCALE: pt_BR
+  APP_FALLBACK_LOCALE: pt_BR
+  LOG_CHANNEL: stderr
+  LOG_LEVEL: warning
+  DB_CONNECTION: pgsql
+  DB_HOST: postgres
+  DB_PORT: 5432
+  DB_DATABASE: ${POSTGRES_DB:-triunfo_menu}
+  # A aplicação usa o papel restrito (RLS ativo); só o serviço "artisan" usa o dono.
+  DB_USERNAME: ${APP_DB_USER:-triunfo_app}
+  DB_PASSWORD: ${APP_DB_PASSWORD:?defina APP_DB_PASSWORD no .env}
+  SESSION_DRIVER: database
+  QUEUE_CONNECTION: redis
+  CACHE_STORE: redis
+  REDIS_CLIENT: phpredis
+  REDIS_HOST: redis
+  REDIS_PORT: 6379
+  REDIS_PASSWORD: ${REDIS_PASSWORD:?defina REDIS_PASSWORD no .env}
+  FILESYSTEM_DISK: local
+  MAIL_MAILER: log
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-triunfo_menu}
+      POSTGRES_USER: ${POSTGRES_OWNER_USER:-triunfo_owner}
+      POSTGRES_PASSWORD: ${POSTGRES_OWNER_PASSWORD:?defina POSTGRES_OWNER_PASSWORD no .env}
+      APP_DB_USER: ${APP_DB_USER:-triunfo_app}
+      APP_DB_PASSWORD: ${APP_DB_PASSWORD:?defina APP_DB_PASSWORD no .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"${REDIS_PASSWORD}\" --no-auth-warning ping | grep -q PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: *backend-build
+    image: triunfo-menu-backend
+    restart: unless-stopped
+    environment: *laravel-env
+    volumes:
+      - app_storage:/var/www/html/storage/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build: *backend-build
+    image: triunfo-menu-backend
+    restart: unless-stopped
+    user: www-data
+    command: ["php", "artisan", "queue:work", "redis", "--sleep=3", "--tries=3", "--max-time=3600"]
+    environment: *laravel-env
+    volumes:
+      - app_storage:/var/www/html/storage/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/caddy/Dockerfile
+    image: triunfo-menu-web
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN}
+      ACME_EMAIL: ${ACME_EMAIL:?defina ACME_EMAIL no .env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+
+  # Comandos administrativos com o usuário DONO do banco (migrations, criar loja).
+  #   docker compose -f docker-compose.prod.yml run --rm artisan migrate --force
+  artisan:
+    build: *backend-build
+    image: triunfo-menu-backend
+    profiles: ["tools"]
+    user: www-data
+    entrypoint: ["php", "artisan"]
+    environment:
+      <<: *laravel-env
+      DB_USERNAME: ${POSTGRES_OWNER_USER:-triunfo_owner}
+      DB_PASSWORD: ${POSTGRES_OWNER_PASSWORD}
+    volumes:
+      - app_storage:/var/www/html/storage/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  redis_data:
+  app_storage:
+  caddy_data:
+  caddy_config:
