@@ -197,7 +197,10 @@ class CheckoutService
                 return false;
             }
 
-            return blank($zone['state'] ?? null) || strtoupper(trim($zone['state'])) === strtoupper(trim($address['state']));
+            // O estado é opcional no endereço: sem ele, a zona é reconhecida só por cidade e bairro.
+            return blank($zone['state'] ?? null)
+                || blank($address['state'] ?? null)
+                || strtoupper(trim($zone['state'])) === strtoupper(trim($address['state']));
         });
 
         if (! $zone) {
@@ -223,7 +226,7 @@ class CheckoutService
             'complement' => filled($input['complement'] ?? null) ? trim($input['complement']) : null,
             'neighborhood' => trim($input['neighborhood']),
             'city' => trim($input['city']),
-            'state' => strtoupper(trim($input['state'])),
+            'state' => strtoupper(trim($input['state'] ?? '')),
             'postal_code' => preg_replace('/\D+/', '', $input['postal_code']),
             'reference' => filled($input['reference'] ?? null) ? trim($input['reference']) : null,
         ];

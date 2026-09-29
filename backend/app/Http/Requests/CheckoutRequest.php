@@ -24,7 +24,7 @@ class CheckoutRequest extends FormRequest
             'delivery_address.number' => ['required_if:fulfillment_type,delivery', 'nullable', 'string', 'max:30'],
             'delivery_address.neighborhood' => ['required_if:fulfillment_type,delivery', 'nullable', 'string', 'max:120'],
             'delivery_address.city' => ['required_if:fulfillment_type,delivery', 'nullable', 'string', 'max:120'],
-            'delivery_address.state' => ['required_if:fulfillment_type,delivery', 'nullable', 'string', 'size:2'],
+            'delivery_address.state' => ['nullable', 'string', 'size:2'],
             'delivery_address.postal_code' => ['required_if:fulfillment_type,delivery', 'nullable', 'string', 'max:12'],
             'delivery_address.label' => ['nullable', 'string', 'max:60'],
             'delivery_address.complement' => ['nullable', 'string', 'max:120'],
