@@ -30,10 +30,30 @@ sudo usermod -aG docker $USER   # saia e entre de novo no SSH
 
 ```bash
 git clone <URL-DO-REPOSITORIO> triunfo-menu && cd triunfo-menu
-cp .env.production.example .env
+nano .env
 ```
 
-Edite o `.env` e preencha. Valores sugeridos:
+Conteúdo do `.env` (na raiz do repositório, na VPS; ele já está no `.gitignore`, nunca commite):
+
+```dotenv
+DOMAIN=triunfomenu.com.br
+ACME_EMAIL=seu-email@exemplo.com
+
+APP_KEY=
+POSTGRES_DB=triunfo_menu
+
+# Dono do banco (superusuário): usado só por migrations e comandos administrativos
+POSTGRES_OWNER_USER=triunfo_owner
+POSTGRES_OWNER_PASSWORD=
+
+# Papel da aplicação (sem superusuário, sem BYPASSRLS), com senha diferente da do dono
+APP_DB_USER=triunfo_app
+APP_DB_PASSWORD=
+
+REDIS_PASSWORD=
+```
+
+Gere os valores em branco assim e cole no arquivo:
 
 ```bash
 echo "APP_KEY=base64:$(openssl rand -base64 32)"
