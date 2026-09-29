@@ -9,3 +9,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; }
+
+/* iOS/Android: campos com fonte menor que 16px fazem o navegador dar zoom ao focar */
+@media (pointer: coarse) {
+  input, select, textarea { font-size: 16px !important; }
+}
