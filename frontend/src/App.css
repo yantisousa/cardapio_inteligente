@@ -588,3 +588,11 @@ footer a:hover { color: #fff; }
 }
 .form-card select:focus { border-color:var(--primary); }
 .form-card select:disabled { background:#f1f1ed; color:var(--muted); cursor:not-allowed; opacity:.75; }
+
+/* Modal do produto no celular: foto fixa no topo, conteúdo rola dentro do modal
+   (antes o conteúdo tinha a altura do modal inteiro e o modal cortava o final). */
+@media (max-width:760px) {
+  .product-modal { display:flex; flex-direction:column; }
+  .modal-photo { flex:0 0 auto; height:clamp(130px,24dvh,220px); min-height:0; }
+  .modal-content { flex:1 1 auto; max-height:none; min-height:0; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; }
+}
