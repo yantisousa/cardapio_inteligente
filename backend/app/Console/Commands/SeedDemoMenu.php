@@ -86,16 +86,26 @@ class SeedDemoMenu extends Command
                     ['name' => 'Laranja', 'price_delta_cents' => 0],
                 ]);
 
-                TenantSetting::query()->firstOrFail()->update([
+                $settings = TenantSetting::query()->firstOrFail();
+                $settings->update([
                     'tagline' => 'Cardápio de teste para validar pedidos.',
                     'delivery_fee_cents' => 500,
                     'minimum_order_cents' => 1500,
                     'estimated_delivery_minutes' => 40,
                     'business_hours' => ['summary' => 'Todos os dias, 11h às 23h'],
+                    // O checkout de entrega monta cidade e bairro a partir das zonas da loja.
+                    // Só preenche se a loja ainda não tiver, para não sobrescrever configuração real.
+                    'address' => $settings->address ?: ['street' => 'Rua Exemplo', 'number' => '100', 'city' => 'São Paulo', 'state' => 'SP'],
+                    'delivery_zones' => $settings->delivery_zones ?: [
+                        ['neighborhood' => 'Centro', 'city' => 'São Paulo', 'state' => 'SP', 'fee_cents' => 500, 'active' => true],
+                        ['neighborhood' => 'Jardins', 'city' => 'São Paulo', 'state' => 'SP', 'fee_cents' => 700, 'active' => true],
+                        ['neighborhood' => 'Pinheiros', 'city' => 'São Paulo', 'state' => 'SP', 'fee_cents' => 800, 'active' => true],
+                        ['neighborhood' => 'Vila Mariana', 'city' => 'São Paulo', 'state' => 'SP', 'fee_cents' => 900, 'active' => true],
+                    ],
                 ]);
             });
 
-            $this->info('Cardápio de teste criado: 4 categorias, 9 produtos, com variações e adicionais.');
+            $this->info('Cardápio de teste criado: 4 categorias, 9 produtos, com variações, adicionais e zonas de entrega.');
 
             return self::SUCCESS;
         } catch (Throwable $exception) {

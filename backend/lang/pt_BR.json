@@ -1,0 +1,9 @@
+{
+    "(and :count more error)": "(e mais :count erro)",
+    "(and :count more errors)": "(e mais :count erros)",
+    "(and :count more error)|(and :count more errors)": "(e mais :count erro)|(e mais :count erros)",
+    "The given data was invalid.": "Os dados informados são inválidos.",
+    "Too Many Attempts.": "Muitas tentativas. Aguarde um instante e tente de novo.",
+    "Server Error": "Erro no servidor.",
+    "Not Found": "Não encontrado."
+}
