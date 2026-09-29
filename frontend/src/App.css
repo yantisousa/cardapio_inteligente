@@ -596,3 +596,12 @@ footer a:hover { color: #fff; }
   .modal-photo { flex:0 0 auto; height:clamp(130px,24dvh,220px); min-height:0; }
   .modal-content { flex:1 1 auto; max-height:none; min-height:0; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; }
 }
+
+/* iOS Safari: a barra inferior cobre o rodapé do modal se usarmos a altura "grande" da tela.
+   Usa a altura visível mínima (svh) e mantém o rodapé com "Adicionar" sempre à vista. */
+@media (max-width:760px) {
+  .overlay { bottom:auto; height:100vh; height:100svh; padding:8px 8px calc(8px + env(safe-area-inset-bottom)); }
+  .product-modal { max-height:calc(100vh - 16px); max-height:calc(100svh - 16px - env(safe-area-inset-bottom)); }
+  .product-modal .modal-content { padding-bottom:0; }
+  .product-modal .modal-footer { bottom:0; margin-bottom:0; padding-bottom:calc(12px + env(safe-area-inset-bottom)); position:sticky; z-index:5; }
+}
