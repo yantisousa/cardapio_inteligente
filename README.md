@@ -50,7 +50,9 @@ A página comercial está em `http://127.0.0.1:5173/triunfo-menu` (use a porta d
 - Plano anunciado: **Basic — R$ 149,90/mês**.
 - Botões de contratação: WhatsApp **(85) 98990-7530**, com mensagem preenchida; não enviam mensagens automaticamente.
 - Prévia interativa com abas de pedidos, cardápio e personalização de cores. Os dados são ilustrativos e não criam pedidos reais.
-- Página e estilos em `frontend/src/TriunfoMenu.jsx` e `frontend/src/TriunfoMenu.css`; marca vetorial em `frontend/public/triunfo-mark.svg`.
+- Página e estilos em `frontend/src/TriunfoMenu.jsx` e `frontend/src/TriunfoMenu.css`; logo oficial original em `frontend/public/triunfo-menu-logo.png`, preservada sem alteração. O viewport SVG no componente compartilhado `TriunfoLogo` enquadra a imagem sem as margens transparentes. Ícone compacto em `frontend/public/triunfo-mark.svg`.
+- Identidade visual: azul-marinho `#142735`, dourado `#D2A861` e destaque `#B8863D`, extraídos da logo oficial. O site comercial, os ícones de marca e o painel usam essa identidade, sem modificar as logos e cores configuradas nas vitrines das lojas.
+- Componentes compartilhados de marca em `frontend/src/TriunfoBrand.jsx`; login e identidade do admin em `frontend/src/AdminBrand.css`. O favicon global e os estados de carregamento usam o símbolo da Triunfo Menu. Ícones funcionais mantêm seus significados (pedido, pagamento, excluir, etc.).
 - A oferta comercial não altera preços de assinaturas no banco nem implementa cobrança automática. A contratação acontece com a equipe pelo WhatsApp.
 
 Em produção, configure o servidor do frontend para entregar `index.html` nas rotas da SPA, incluindo `/triunfo-menu`.
@@ -81,6 +83,8 @@ O domínio é resolvido antes de qualquer dado operacional. O cliente nunca envi
 O checkout bloqueia o tenant durante a numeração, relê produtos, variações e adicionais, recalcula todos os valores, grava snapshots e só despacha o job `OrderPlaced` depois do commit. Repetir a mesma chave de idempotência devolve o pedido original.
 
 ## Validação
+
+Dentro de `frontend/`, execute `node scripts/check-branding.mjs` para verificar a marca compartilhada, o favicon e a renderização do login e do painel autenticado. Essa verificação é offline: não faz login nem altera dados ou sessões do navegador.
 
 ```bash
 cd backend && php artisan test

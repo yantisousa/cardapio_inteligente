@@ -1,0 +1,110 @@
+/* Platform identity stays separate from each restaurant's storefront theme. */
+body:has(.platform-login) { min-width: 0; }
+.admin-shell, .platform-login { --primary: #142735; --accent: #142735; --muted: #65737e; --platform-gold: #d2a861; --platform-paper: #faf9f6; --platform-line: #e5e1d8; }
+.admin-platform-brand { display: inline-flex; flex-shrink: 0; line-height: 0; border-radius: 8px; }
+.admin-shell .admin-platform-brand .triunfo-logo { width: 164px; }
+.admin-shell .sidebar-brand { align-items: center; display: flex; gap: 8px; justify-content: space-between; padding: 0 5px 24px; }
+.admin-shell .restaurant-switcher > span { background: #f0e5d0; color: #142735; overflow: hidden; }
+.admin-shell .restaurant-switcher > span img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+.admin-shell .restaurant-switcher > span svg { width: 20px; height: 20px; }
+.admin-shell .restaurant-switcher b { overflow-wrap: anywhere; }
+.admin-shell .restaurant-switcher > div { min-width: 0; }
+.admin-shell .admin-sidebar nav button.active { background: #f4edde; }
+.admin-shell .admin-sidebar nav button.active::before { background: #d2a861; }
+.admin-shell .admin-sidebar nav button.active > svg { color: #94682f; }
+.admin-shell .admin-sidebar nav button:hover:not(.active):not(:disabled) { background: #f5f3ed; }
+.admin-shell :is(.settings-section-title, .order-section-title) > svg { color: #92682e; background: #f5ecdd; }
+.admin-shell .admin-profile > span { color: #142735; background: #f0e4ce; }
+.admin-shell .admin-empty > svg { color: #a47c3d; }
+.admin-shell .icon-button:focus-visible, .admin-platform-brand:focus-visible { outline: 3px solid #a77b36; outline-offset: 4px; }
+
+.admin-login.platform-login { background: var(--platform-paper); color: #142735; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; min-height: 100dvh; }
+.platform-login-story { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; gap: 45px; padding: 42px clamp(36px, 5vw, 90px); background: radial-gradient(ellipse at 90% 90%, #284555 0, transparent 65%), #142735; color: #fff; }
+.platform-login-story::before, .platform-login-story::after { content: ''; position: absolute; z-index: -1; width: 580px; height: 580px; border: 1px solid #d2a86124; border-radius: 50%; right: -320px; bottom: -340px; pointer-events: none; }
+.platform-login-story::after { width: 750px; height: 750px; right: -405px; bottom: -425px; }
+.platform-login-wordmark { display: inline-flex; align-items: center; align-self: flex-start; gap: 12px; }
+.platform-login-wordmark .triunfo-mark { width: 46px; height: 46px; border: 1px solid #d2a86135; border-radius: 11px; }
+.platform-login-wordmark > span { font-size: 16px; font-weight: 600; letter-spacing: -.4px; }
+.platform-login-wordmark small { display: block; margin-top: 4px; color: #abbecb; font-size: 7px; letter-spacing: 1.3px; font-weight: 400; }
+.platform-login-eyebrow { display: block; font-size: 9px; font-weight: 600; letter-spacing: 1.8px; line-height: 1.7; }
+.platform-login-story .platform-login-eyebrow { color: #d2a861; }
+.platform-login-pitch h1 { margin: 19px 0 24px; font-size: clamp(40px, 4vw, 60px); font-weight: 500; line-height: 1.12; letter-spacing: -2.6px; }
+.platform-login-pitch h1 > span { color: #d2a861; }
+.platform-login-pitch > p { color: #becdd6; font-size: 13px; line-height: 1.9; margin: 0; }
+.platform-login-features { display: grid; gap: 20px; list-style: none; padding: 0; margin: 35px 0 0; }
+.platform-login-features li { display: flex; align-items: center; gap: 14px; }
+.platform-login-features li > svg { width: 39px; height: 39px; flex-shrink: 0; color: #d2a861; padding: 10px; background: #ffffff07; border: 1px solid #ffffff15; border-radius: 10px; stroke-width: 1.7; }
+.platform-login-features li > span { display: flex; flex-direction: column; gap: 4px; }
+.platform-login-features b { font-size: 11px; font-weight: 500; }
+.platform-login-features small { font-size: 9px; line-height: 1.6; color: #b1c1ce; }
+.platform-login-signature { display: block; font-size: 9px; color: #9eb2c1; letter-spacing: .2px; }
+.platform-login-content { display: flex; align-items: center; justify-content: center; min-width: 0; padding: 42px 36px; }
+.platform-login-card { width: 100%; max-width: 380px; min-width: 0; }
+.platform-login-card > .admin-platform-brand { margin-bottom: 33px; }
+.platform-login-card .triunfo-logo { width: 178px; }
+.platform-login-card > .platform-login-eyebrow { color: #946b2e; font-size: 8px; }
+.platform-login-card h2 { margin: 10px 0 9px; font-size: 30px; font-weight: 600; letter-spacing: -1.2px; line-height: 1.25; }
+.platform-login-card > p { margin: 0 0 25px; font-size: 12px; line-height: 1.8; color: #65737e; }
+.platform-login-store { display: flex; align-items: center; gap: 12px; padding: 12px 14px; margin-bottom: 23px; background: #f1eee7; border: 1px solid #e7e0d3; border-radius: 10px; }
+.platform-login-store > img { width: 33px; height: 33px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: white; }
+.platform-login-store > svg { width: 21px; height: 21px; flex-shrink: 0; color: #9a7436; }
+.platform-login-store > span { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.platform-login-store small { color: #6c7982; font-size: 6px; font-weight: 500; letter-spacing: 1px; }
+.platform-login-store strong { font-size: 11px; font-weight: 500; overflow-wrap: anywhere; }
+.platform-login-form label { display: block; font-size: 11px; font-weight: 500; margin-bottom: 8px; }
+.platform-login-field { position: relative; margin-bottom: 20px; }
+.platform-login-field > svg { position: absolute; top: 50%; transform: translateY(-50%); left: 15px; width: 17px; height: 17px; color: #84919a; pointer-events: none; stroke-width: 1.7; }
+.platform-login-field input { display: block; width: 100%; min-width: 0; padding: 15px 44px; border: 1px solid #dcdfe0; border-radius: 10px; background: #fff; color: #142735; font: inherit; font-size: 13px; min-height: 52px; outline: none; transition: border-color .15s, box-shadow .15s; }
+.platform-login-field input::placeholder { color: #88939b; font-size: 11px; }
+.platform-login-field input:focus { border-color: #a88042; box-shadow: 0 0 0 3px #d2a86124; }
+.platform-password-toggle { position: absolute; inset: 4px 4px 4px auto; width: 42px; display: grid; place-items: center; background: transparent; color: #6b7c88; border: 0; border-radius: 7px; }
+.platform-password-toggle svg { width: 18px; height: 18px; stroke-width: 1.7; }
+.platform-password-toggle:hover { background: #f4f0e8; color: #142735; }
+.platform-login-submit { display: flex; align-items: center; justify-content: space-between; gap: 15px; width: 100%; min-height: 53px; border: 0; border-radius: 10px; padding: 15px 19px; background: #142735; color: #fff; font-size: 12px; font-weight: 600; transition: background .15s, box-shadow .15s; box-shadow: 0 8px 22px -15px #14273599; }
+.platform-login-submit > svg { color: #d2a861; }
+.platform-login-submit:hover:not(:disabled) { background: #254457; box-shadow: 0 12px 24px -15px #14273599; }
+.platform-login-submit:disabled { cursor: wait; opacity: .65; }
+.platform-login-form .admin-alert { font-size: 11px; line-height: 1.6; }
+.platform-login-help { color: #71808b; font-size: 9px; line-height: 1.7; text-align: center; margin: 15px 0 26px; }
+.platform-login-back { display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 10px; font-weight: 500; color: #526674; padding: 8px; }
+.platform-login-back:hover { color: #946b2e; }
+.platform-login-footer { display: flex; align-items: center; justify-content: center; gap: 6px; border-top: 1px solid #e5e1d8; padding-top: 22px; margin-top: 23px; color: #71818b; font-size: 8px; }
+.platform-login-footer svg { color: #9b7842; flex-shrink: 0; }
+.platform-login a:focus-visible, .platform-login button:focus-visible { outline: 3px solid #a77b36; outline-offset: 4px; }
+@media (max-width: 1000px) {
+  .admin-login.platform-login { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+  .platform-login-story { padding: 30px; gap: 40px; }
+  .platform-login-pitch h1 { font-size: 43px; letter-spacing: -2px; }
+  .platform-login-pitch > p { font-size: 11px; }
+  .platform-login-wordmark small { font-size: 6px; letter-spacing: .6px; }
+  .platform-login-content { padding: 35px 25px; }
+}
+@media (max-width: 760px) {
+  .admin-login.platform-login { grid-template-columns: minmax(0, 1fr); }
+  .platform-login-story { display: none; }
+  .platform-login-content { padding: 30px 24px; }
+  .platform-login-card { max-width: 410px; }
+  .platform-login-card > .admin-platform-brand { margin-bottom: 27px; }
+  .platform-login-card .triunfo-logo { width: 164px; }
+  .platform-login-card h2 { font-size: 29px; }
+  .platform-login-field input { font-size: 16px; }
+}
+@media (max-width: 360px) {
+  .platform-login-content { padding: 24px 18px; }
+  .platform-login-card h2 { font-size: 27px; }
+  .platform-login-card .triunfo-logo { width: 150px; }
+  .platform-login-field input { padding-inline: 38px; }
+  .platform-login-field input::placeholder { font-size: 10px; }
+  .platform-login-field > svg { left: 12px; }
+  .platform-login-footer { font-size: 7px; }
+}
+@media (max-height: 760px) and (min-width: 761px) {
+  .platform-login-story { padding-block: 28px; gap: 30px; }
+  .platform-login-pitch h1 { font-size: 44px; }
+  .platform-login-features { gap: 14px; margin-top: 24px; }
+  .platform-login-content { padding-block: 28px; }
+  .platform-login-card > .admin-platform-brand { margin-bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .platform-login *, .admin-shell .admin-sidebar nav button { transition: none; }
+}

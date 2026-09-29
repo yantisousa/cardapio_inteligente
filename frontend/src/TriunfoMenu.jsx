@@ -6,6 +6,7 @@ import {
   Sparkles, Store, Utensils, X,
 } from 'lucide-react'
 import './TriunfoMenu.css'
+import { TriunfoLogo, TriunfoMark } from './TriunfoBrand'
 
 const salesUrl = `https://wa.me/5585989907530?text=${encodeURIComponent('Olá! Tenho interesse no plano Basic da Triunfo Menu de R$ 149,90/mês. Gostaria de saber como contratar para o meu negócio.')}`
 const previewTabs = [
@@ -37,10 +38,9 @@ const questions = [
   { question: 'Como faço para contratar?', answer: 'Clique em “Quero o Basic” para conversar com a Triunfo Menu pelo WhatsApp. A equipe orienta sobre a contratação e a configuração inicial do seu negócio.' },
 ]
 
-function Brand({ inverse = false }) {
-  return <a className={`tm-brand${inverse ? ' tm-brand-inverse' : ''}`} href="#inicio" aria-label="Triunfo Menu — início">
-    <img src="/triunfo-mark.svg" alt="" width="42" height="42" />
-    <span>triunfo<span className="tm-brand-light">menu</span><span className="tm-brand-dot">.</span></span>
+function Brand() {
+  return <a className="tm-brand" href="#inicio" aria-label="Triunfo Menu — início">
+    <TriunfoLogo className="tm-brand-logo" />
   </a>
 }
 
@@ -63,7 +63,7 @@ function BurgerArt() {
   </svg>
 }
 
-function ProductPreview({ color = 'green' }) {
+function ProductPreview({ color = 'navy' }) {
   return <div className={`tm-mini-store tm-mini-store-${color}`}>
     <div className="tm-mini-store-heading"><span className="tm-mini-store-logo"><Utensils size={16} /></span><div><strong>Casa do Sabor</strong><span>Feito com carinho, pra você.</span></div><span className="tm-open-dot" /></div>
     <div className="tm-mini-store-banner"><div><span>SEU NOVO FAVORITO</span><strong>Sabor de<br />quero mais.</strong><small>Conheça nossos clássicos</small></div><BurgerArt /></div>
@@ -75,14 +75,14 @@ function ProductPreview({ color = 'green' }) {
 
 function DashboardPreview() {
   const [activeTab, setActiveTab] = useState('orders')
-  const [color, setColor] = useState('green')
-  const palettes = [{ id: 'green', label: 'Verde' }, { id: 'terracotta', label: 'Terracota' }, { id: 'purple', label: 'Roxo' }]
+  const [color, setColor] = useState('navy')
+  const palettes = [{ id: 'navy', label: 'Azul-marinho' }, { id: 'terracotta', label: 'Terracota' }, { id: 'purple', label: 'Roxo' }]
   return <div className="tm-product-scene" id="demonstracao">
     <div className="tm-scene-label"><span /> UM POUCO DO SEU PRÓXIMO CAPÍTULO</div>
     <div className="tm-dashboard">
       <div className="tm-dashboard-top"><div className="tm-window-dots"><i /><i /><i /></div><span>Seu negócio. No controle.</span><span className="tm-avatar">CS</span></div>
       <div className="tm-dashboard-body">
-        <div className="tm-dashboard-sidebar" aria-hidden="true"><img src="/triunfo-mark.svg" alt="" /><span className="is-active"><LayoutGrid size={18} /></span><ReceiptText size={18} /><Utensils size={18} /><Palette size={18} /><span className="tm-sidebar-bottom"><Store size={18} /></span></div>
+        <div className="tm-dashboard-sidebar" aria-hidden="true"><TriunfoMark /><span className="is-active"><LayoutGrid size={18} /></span><ReceiptText size={18} /><Utensils size={18} /><Palette size={18} /><span className="tm-sidebar-bottom"><Store size={18} /></span></div>
         <div className="tm-dashboard-main">
           <div className="tm-dashboard-greeting"><div><span>PAINEL DA SUA LOJA</span><h3>Olá, Casa do Sabor <span>✦</span></h3></div><span className="tm-store-open"><i /> Loja aberta</span></div>
           <div className="tm-preview-tabs" role="tablist" aria-label="Explore a demonstração">
@@ -123,7 +123,14 @@ export default function TriunfoMenu() {
     const favicon = document.querySelector('link[rel="icon"]')
     const originalFavicon = favicon?.getAttribute('href')
     if (favicon) favicon.setAttribute('href', '/triunfo-mark.svg')
-    return () => { if (description) description.content = originalDescription; if (favicon && originalFavicon) favicon.setAttribute('href', originalFavicon) }
+    const themeColor = document.querySelector('meta[name="theme-color"]')
+    const originalThemeColor = themeColor?.content
+    if (themeColor) themeColor.content = '#142735'
+    return () => {
+      if (description) description.content = originalDescription
+      if (favicon && originalFavicon) favicon.setAttribute('href', originalFavicon)
+      if (themeColor) themeColor.content = originalThemeColor
+    }
   }, [])
   useEffect(() => {
     if (!menuOpen) return
@@ -151,7 +158,7 @@ export default function TriunfoMenu() {
           <span className="tm-eyebrow tm-hero-badge"><span /> O SEU NEGÓCIO TEM UM PRÓXIMO NÍVEL</span>
           <h1 id="tm-hero-heading">Muito mais que<br />um cardápio.<br /><span>O seu próximo<br className="tm-desktop-break" /> triunfo.</span></h1>
           <p>Sua marca em destaque. Seus pedidos organizados.<br className="tm-desktop-break" /> Tudo em uma plataforma simples, feita para quem<br className="tm-desktop-break" /> coloca sabor no mundo.</p>
-          <div className="tm-hero-actions"><a className="tm-button tm-button-green" href="#planos">Conhecer o Basic <ArrowRight size={18} /></a><a className="tm-text-link" href="#demonstracao">Explore a plataforma <ArrowUpRight size={17} /></a></div>
+          <div className="tm-hero-actions"><a className="tm-button tm-button-primary" href="#planos">Conhecer o Basic <ArrowRight size={18} /></a><a className="tm-text-link" href="#demonstracao">Explore a plataforma <ArrowUpRight size={17} /></a></div>
           <div className="tm-hero-note"><CircleCheck size={16} /><span>Seu próximo passo por <strong>R$ 149,90/mês.</strong></span></div>
         </div>
         <DashboardPreview />
@@ -178,7 +185,7 @@ export default function TriunfoMenu() {
 
       <section id="planos" className="tm-section tm-container tm-pricing-section" aria-labelledby="tm-pricing-heading">
         <div className="tm-pricing-intro"><span className="tm-eyebrow">SIMPLES ATÉ NA HORA DE ESCOLHER</span><h2 id="tm-pricing-heading">O essencial para <br />começar.<br /><span>O potencial para <br />ir além.</span></h2><p>Um plano para colocar o seu negócio no digital e organizar a rotina, sem complicação.</p><div className="tm-pricing-note"><span><MessageCircle size={22} /></span><div><strong>Ficou com alguma dúvida?</strong><a href={salesUrl} target="_blank" rel="noopener noreferrer">Vamos conversar no WhatsApp <ArrowUpRight size={14} /></a></div></div></div>
-        <article className="tm-price-card"><div className="tm-plan-heading"><span><Sparkles size={18} /> PLANO BASIC</span><span className="tm-plan-tag">Seu próximo passo</span></div><h3>Pequeno no nome.<br />Grande nas possibilidades.</h3><div className="tm-price"><span>R$</span><strong>149<span>,90</span></strong><span>/mês</span></div><p className="tm-price-description">Uma plataforma. O controle nas suas mãos.</p><div className="tm-price-divider" /><ul>{included.map((feature) => <li key={feature}><Check size={17} />{feature}</li>)}</ul><SalesLink className="tm-button-lime">Quero o Basic</SalesLink><span className="tm-price-footnote"><MessageCircle size={13} /> Contratação pelo WhatsApp · fale com a nossa equipe</span></article>
+        <article className="tm-price-card"><div className="tm-plan-heading"><span><Sparkles size={18} /> PLANO BASIC</span><span className="tm-plan-tag">Seu próximo passo</span></div><h3>Pequeno no nome.<br />Grande nas possibilidades.</h3><div className="tm-price"><span>R$</span><strong>149<span>,90</span></strong><span>/mês</span></div><p className="tm-price-description">Uma plataforma. O controle nas suas mãos.</p><div className="tm-price-divider" /><ul>{included.map((feature) => <li key={feature}><Check size={17} />{feature}</li>)}</ul><SalesLink className="tm-button-gold">Quero o Basic</SalesLink><span className="tm-price-footnote"><MessageCircle size={13} /> Contratação pelo WhatsApp · fale com a nossa equipe</span></article>
       </section>
 
       <section id="duvidas" className="tm-faq-section" aria-labelledby="tm-faq-heading"><div className="tm-container tm-faq-layout"><div><span className="tm-eyebrow">ANTES DO PRIMEIRO PEDIDO</span><h2 id="tm-faq-heading">Uma boa escolha <br />começa sem<br /><span>dúvidas.</span></h2><p>Se precisar de uma mão,<br />é só chamar a gente.</p><a className="tm-text-link" href={salesUrl} target="_blank" rel="noopener noreferrer">Falar com a Triunfo <ArrowUpRight size={17} /></a></div><div className="tm-faq-list">{questions.map(({ question, answer }) => <details key={question} name="tm-faq"><summary>{question}<Plus size={19} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></div></section>

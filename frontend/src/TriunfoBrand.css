@@ -1,0 +1,7 @@
+.triunfo-logo { display: block; flex-shrink: 0; max-width: 100%; height: auto; }
+.triunfo-mark { display: block; flex-shrink: 0; object-fit: contain; }
+.application-loading { align-items: center; background: #faf9f6; color: #142735; display: flex; flex-direction: column; gap: 12px; justify-content: center; min-height: 100dvh; padding: 24px; }
+.application-loading p { font-size: 13px; margin: 0; }
+.brand-mark.brand-mark-platform { background: transparent; border-radius: 10px; overflow: hidden; transform: none; }
+.brand-mark-platform .triunfo-mark { height: 100%; width: 100%; }
+.store-load-state .triunfo-mark { margin: 0 auto 18px; }

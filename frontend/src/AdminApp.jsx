@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import {
-  Bell, BellOff, Check, ChevronRight, Clock3, Eye, GripVertical, Image, LayoutDashboard, LayoutTemplate, LogOut, Mail, MapPin, Menu, Monitor, PackageCheck,
+  ArrowLeft, ArrowRight, Bell, BellOff, Check, ChevronRight, Clock3, Eye, EyeOff, GripVertical, Image, LayoutDashboard, LayoutTemplate, LockKeyhole, LogOut, Mail, MapPin, Menu, Monitor, PackageCheck,
   MessageCircle, PackageX, Palette, Pencil, Phone, Plus, Power, Printer, ReceiptText, RotateCcw, Save, Search, Settings, ShoppingBag,
-  Smartphone, Sparkles, Trash2, Upload, Users, X,
+  ShieldCheck, Smartphone, Sparkles, Store, Trash2, Upload, Users, X,
 } from 'lucide-react'
 import { tenantHeaders, tenantStorageKey, tenantUrl } from './tenant'
 import { DEFAULT_DESIGN, mergeDesign } from './storefrontDesign'
+import { TriunfoLogo, TriunfoMark } from './TriunfoBrand'
+import './AdminBrand.css'
 
 const money = (cents) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format((cents || 0) / 100)
 const toCents = (value) => Math.round(Number(String(value || 0).replace(',', '.')) * 100)
@@ -83,9 +85,8 @@ function BrandAssetUpload({ kind, label, value, uploading, onUpload }) {
   return <div className={`brand-asset-field ${kind}`}><div className="brand-asset-preview">{value ? <img src={value} alt={`Prévia de ${label.toLowerCase()}`} /> : <Image />}</div><div className="brand-asset-copy"><b>{label}</b><small>{kind === 'logo' ? 'PNG, JPG ou WebP. Recomendado: imagem quadrada.' : 'PNG, JPG ou WebP. Recomendado: formato horizontal.'}</small><label className={`asset-upload-button ${uploading === kind ? 'disabled' : ''}`} htmlFor={inputId}><Upload /> {uploading === kind ? 'Enviando...' : `Enviar ${label.toLowerCase()}`}</label><input id={inputId} className="asset-file-input" type="file" accept="image/png,image/jpeg,image/webp" disabled={Boolean(uploading)} onChange={(event) => { const file = event.target.files?.[0]; if (file) onUpload(kind, file); event.target.value = '' }} /></div></div>
 }
 
-function AdminBrand({ store }) {
-  const name = store?.store_name || 'Sua loja'
-  return <div className="brand compact">{store?.logo_url ? <span className="brand-logo"><img src={store.logo_url} alt={`Logo de ${name}`} /></span> : <span className="brand-mark"><Sparkles size={17} /></span>}<span>{name}</span></div>
+function AdminBrand() {
+  return <a className="admin-platform-brand" href="/triunfo-menu" aria-label="Conhecer a Triunfo Menu"><TriunfoLogo /></a>
 }
 
 function AdminLogin({ onLogin, store }) {
@@ -93,6 +94,7 @@ function AdminLogin({ onLogin, store }) {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [sending, setSending] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   async function submit(event) {
     event.preventDefault(); setSending(true); setError('')
@@ -102,7 +104,46 @@ function AdminLogin({ onLogin, store }) {
     } catch (reason) { setError(reason.message) } finally { setSending(false) }
   }
 
-  return <main className="admin-login" style={{ '--primary': store?.primary_color, '--accent': store?.accent_color }}><section className="login-panel"><AdminBrand store={store} /><div className="login-copy"><span className="eyebrow">Área da loja</span><h1>Cuide de {store?.store_name || 'sua loja'} em um só lugar.</h1><p>Atualize o cardápio, personalize sua marca e acompanhe a operação em tempo real.</p></div><div className="login-feature"><Palette /><span><b>Sua identidade</b><small>Cores, textos, entrega e pagamentos.</small></span></div></section><section className="login-form-wrap"><form className="login-form" onSubmit={submit}><span className="eyebrow">Bem-vindo de volta</span><h2>Entrar no painel</h2><p>Use o acesso da equipe do restaurante.</p><label>E-mail<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required /></label><label>Senha<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required placeholder="Sua senha" /></label>{error && <div className="admin-alert error">{error}</div>}<button className="primary-button" disabled={sending}>{sending ? 'Entrando...' : 'Entrar no painel'}</button></form></section></main>
+  return <main className="admin-login platform-login">
+    <section className="platform-login-story" aria-labelledby="platform-login-title">
+      <a className="platform-login-wordmark" href="/triunfo-menu" aria-label="Conhecer a Triunfo Menu"><TriunfoMark /><span>Triunfo Menu<small>TECNOLOGIA QUE SERVE O SEU NEGÓCIO</small></span></a>
+      <div className="platform-login-pitch">
+        <span className="platform-login-eyebrow">O PRÓXIMO CAPÍTULO DO SEU NEGÓCIO</span>
+        <h1 id="platform-login-title">Mais controle.<br />Mais tempo.<br /><span>Mais triunfo.</span></h1>
+        <p>Seu cardápio, sua equipe e cada pedido.<br />Tudo no lugar certo para você ir além.</p>
+        <ul className="platform-login-features">
+          <li><ReceiptText /><span><b>Uma operação organizada</b><small>Acompanhe os pedidos em um só painel.</small></span></li>
+          <li><Palette /><span><b>Uma loja com a sua cara</b><small>Personalize seu cardápio sem complicação.</small></span></li>
+          <li><Users /><span><b>Sua equipe conectada</b><small>Cada pessoa com seu acesso à loja.</small></span></li>
+        </ul>
+      </div>
+      <span className="platform-login-signature">Feito para quem coloca sabor no mundo.</span>
+    </section>
+
+    <section className="platform-login-content" aria-labelledby="platform-login-form-title">
+      <div className="platform-login-card">
+        <AdminBrand />
+        <span className="platform-login-eyebrow">BEM-VINDO DE VOLTA</span>
+        <h2 id="platform-login-form-title">Entrar no painel</h2>
+        <p>Seu próximo triunfo começa por aqui.</p>
+        {store?.store_name && <div className="platform-login-store">
+          {store.logo_url ? <img src={store.logo_url} alt={`Logo de ${store.store_name}`} /> : <Store aria-hidden="true" />}
+          <span><small>VOCÊ ESTÁ ACESSANDO</small><strong>{store.store_name}</strong></span>
+        </div>}
+        <form className="platform-login-form" onSubmit={submit} aria-busy={sending}>
+          <label htmlFor="admin-email">E-mail da equipe</label>
+          <div className="platform-login-field"><Mail aria-hidden="true" /><input id="admin-email" name="email" type="email" autoComplete="username" autoCapitalize="none" spellCheck={false} value={email} onChange={(event) => setEmail(event.target.value)} placeholder="voce@seurestaurante.com.br" disabled={sending} required /></div>
+          <label htmlFor="admin-password">Senha</label>
+          <div className="platform-login-field"><LockKeyhole aria-hidden="true" /><input id="admin-password" name="password" type={showPassword ? 'text' : 'password'} autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} required placeholder="Sua senha" disabled={sending} /><button className="platform-password-toggle" type="button" onClick={() => setShowPassword((visible) => !visible)} aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'} aria-pressed={showPassword} aria-controls="admin-password">{showPassword ? <EyeOff /> : <Eye />}</button></div>
+          {error && <div className="admin-alert error" role="alert">{error}</div>}
+          <button className="platform-login-submit" type="submit" disabled={sending}>{sending ? 'Entrando...' : 'Entrar no painel'}<ArrowRight size={18} aria-hidden="true" /></button>
+          <p className="platform-login-help">Use o acesso fornecido pelo responsável da sua loja.</p>
+        </form>
+        <a className="platform-login-back" href={tenantUrl('/')}><ArrowLeft size={15} /> Voltar para o cardápio</a>
+        <div className="platform-login-footer"><ShieldCheck size={15} /><span>Área exclusiva da equipe · Triunfo Menu</span></div>
+      </div>
+    </section>
+  </main>
 }
 
 function EmptyState({ icon: Icon, title, text }) {
@@ -619,6 +660,11 @@ export default function AdminApp() {
   const [store, setStore] = useState(null)
   const [operationError, setOperationError] = useState('')
   const [changingOperation, setChangingOperation] = useState(false)
+  useEffect(() => {
+    document.title = token
+      ? `${store?.store_name || 'Painel administrativo'} · Triunfo Menu`
+      : 'Entrar no painel · Triunfo Menu'
+  }, [token, store?.store_name])
   useEffect(() => { let active = true; api('/storefront').then((data) => active && setStore(data.store)).catch(() => {}); return () => { active = false } }, [])
   useEffect(() => { if (!token) return undefined; let active = true; api('/admin/settings', { token }).then((data) => active && setStore(data.settings)).catch(() => {}); return () => { active = false } }, [token])
   useEffect(() => {
@@ -643,5 +689,5 @@ export default function AdminApp() {
   if (!token) return <AdminLogin store={store} onLogin={(data) => { localStorage.setItem(tokenStorageKey, data.token); localStorage.setItem(userStorageKey, JSON.stringify(data.user)); setToken(data.token); setUser(data.user) }} />
   const logout = () => { localStorage.removeItem(tokenStorageKey); localStorage.removeItem(userStorageKey); setToken(''); setUser(null) }
   const storeName = store?.store_name || 'Sua loja'
-  return <div className="admin-shell" style={{ '--primary': store?.primary_color, '--accent': store?.accent_color }}><aside className={`admin-sidebar ${sidebar ? 'open' : ''}`}><div className="sidebar-brand"><AdminBrand store={store} /><button className="icon-button sidebar-close" onClick={() => setSidebar(false)}><X /></button></div><div className="restaurant-switcher"><span>{storeName.split(' ').map((part) => part[0]).slice(0, 2).join('')}</span><div><b>{storeName}</b><small>Loja atual</small></div><ChevronRight /></div><nav>{navItems.map(({ id, icon: Icon, label, disabled }) => <button className={view === id ? 'active' : ''} disabled={disabled} onClick={() => { if (!disabled) { setView(id); setSidebar(false) } }} key={id}><Icon /><span>{label}</span>{disabled && <small>breve</small>}</button>)}</nav><div className="sidebar-bottom"><a href={tenantUrl('/')}>← Ver minha loja</a><div className="admin-profile"><span>{user?.name?.[0] || 'U'}</span><div><b>{user?.name || 'Usuário'}</b><small>Equipe da loja</small></div><button title="Sair" onClick={logout}><LogOut /></button></div></div></aside><main className="admin-main"><header className="admin-header"><button className="icon-button menu-toggle" onClick={() => setSidebar(true)}><Menu /></button><div><span className="eyebrow">{titles[view]?.[0]}</span><h1>{titles[view]?.[1]}</h1></div><div className="header-actions"><button type="button" className={`store-pause-toggle ${store?.is_paused ? 'paused' : ''}`} disabled={!store || changingOperation} onClick={toggleStorePause}><Power /> {changingOperation ? 'Atualizando...' : store?.is_paused ? 'Retomar pedidos' : 'Pausar loja'}</button><span className={`store-status ${store?.is_paused ? 'paused' : ''}`}><i /> {store?.is_paused ? 'Loja pausada' : store?.business_hours?.summary || 'Loja configurada'}</span></div></header><div className="admin-view">{operationError && <div className="admin-alert error">{operationError}</div>}<div hidden={view !== 'orders'}><OrdersView token={token} store={store} /></div>{view === 'menu' && <MenuManager token={token} />}{view === 'site' && <SiteEditor token={token} onStoreChange={setStore} />}{view === 'customers' && <CustomersView token={token} />}{view === 'settings' && <SettingsManager token={token} onStoreChange={setStore} />}</div></main></div>
+  return <div className="admin-shell"><aside className={`admin-sidebar ${sidebar ? 'open' : ''}`}><div className="sidebar-brand"><AdminBrand /><button className="icon-button sidebar-close" aria-label="Fechar menu do painel" onClick={() => setSidebar(false)}><X /></button></div><div className="restaurant-switcher"><span>{store?.logo_url ? <img src={store.logo_url} alt={`Logo de ${storeName}`} /> : <Store aria-hidden="true" />}</span><div><b>{storeName}</b><small>Loja atual</small></div><ChevronRight /></div><nav>{navItems.map(({ id, icon: Icon, label, disabled }) => <button className={view === id ? 'active' : ''} disabled={disabled} onClick={() => { if (!disabled) { setView(id); setSidebar(false) } }} key={id}><Icon /><span>{label}</span>{disabled && <small>breve</small>}</button>)}</nav><div className="sidebar-bottom"><a href={tenantUrl('/')}>← Ver minha loja</a><div className="admin-profile"><span>{user?.name?.[0] || 'U'}</span><div><b>{user?.name || 'Usuário'}</b><small>Equipe da loja</small></div><button title="Sair" onClick={logout}><LogOut /></button></div></div></aside><main className="admin-main"><header className="admin-header"><button className="icon-button menu-toggle" aria-label="Abrir menu do painel" onClick={() => setSidebar(true)}><Menu /></button><div><span className="eyebrow">{titles[view]?.[0]}</span><h1>{titles[view]?.[1]}</h1></div><div className="header-actions"><button type="button" className={`store-pause-toggle ${store?.is_paused ? 'paused' : ''}`} disabled={!store || changingOperation} onClick={toggleStorePause}><Power /> {changingOperation ? 'Atualizando...' : store?.is_paused ? 'Retomar pedidos' : 'Pausar loja'}</button><span className={`store-status ${store?.is_paused ? 'paused' : ''}`}><i /> {store?.is_paused ? 'Loja pausada' : store?.business_hours?.summary || 'Loja configurada'}</span></div></header><div className="admin-view">{operationError && <div className="admin-alert error">{operationError}</div>}<div hidden={view !== 'orders'}><OrdersView token={token} store={store} /></div>{view === 'menu' && <MenuManager token={token} />}{view === 'site' && <SiteEditor token={token} onStoreChange={setStore} />}{view === 'customers' && <CustomersView token={token} />}{view === 'settings' && <SettingsManager token={token} onStoreChange={setStore} />}</div></main></div>
 }

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import {
   ArrowLeft, ArrowRight, Bell, Bike, Check, ChevronRight, Clock3, Copy, CreditCard,
   LayoutDashboard, MapPin, Menu, Minus, PackageCheck, Plus, Power, Search, Settings,
-  ShoppingBag, Sparkles, Truck, Users, X,
+  ShoppingBag, Truck, Users, X,
 } from 'lucide-react'
 import './App.css'
 import AdminApp from './AdminApp'
@@ -10,6 +10,7 @@ import { tenantHeaders, tenantUrl } from './tenant'
 import { mergeDesign } from './storefrontDesign'
 import QRCode from 'qrcode'
 import { buildPixPayload } from './pix'
+import { TriunfoMark } from './TriunfoBrand'
 
 const money = (cents) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(cents / 100)
 const normalizePhone = (value) => {
@@ -45,7 +46,7 @@ function Brand({ store, compact = false }) {
   const parts = name.trim().split(/\s+/)
   const highlight = parts.length > 1 ? parts.pop() : parts[0]
   const prefix = parts.length > 0 ? `${parts.join(' ')} ` : ''
-  return <div className={`brand ${compact ? 'compact' : ''}`}>{store?.logo_url ? <span className="brand-logo"><img src={store.logo_url} alt={`Logo de ${name}`} /></span> : <span className="brand-mark"><Sparkles size={18} /></span>}<span>{prefix}<strong>{highlight}</strong></span></div>
+  return <div className={`brand ${compact ? 'compact' : ''}`}>{store?.logo_url ? <span className="brand-logo"><img src={store.logo_url} alt={`Logo de ${name}`} /></span> : <span className="brand-mark brand-mark-platform"><TriunfoMark /></span>}<span>{prefix}<strong>{highlight}</strong></span></div>
 }
 
 function ProductModal({ product, onClose, onAdd }) {
@@ -347,8 +348,8 @@ function Storefront() {
   const products = useMemo(() => (data?.categories || []).flatMap((category) => category.products.map((product) => ({ ...product, category: category.name }))).filter((product) => `${product.name} ${product.description || ''}`.toLowerCase().includes(search.toLowerCase())), [data, search])
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0), cartTotal = cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0)
   const updateQuantity = (index, delta) => setCart((current) => current.flatMap((item, itemIndex) => itemIndex !== index ? [item] : item.quantity + delta > 0 ? [{ ...item, quantity: item.quantity + delta }] : []))
-  if (loadError) return <main className="store-load-state"><div><Sparkles /><h1>Não foi possível carregar a loja</h1><p>{loadError}</p><button className="primary-button" onClick={() => window.location.reload()}>Tentar novamente</button></div></main>
-  if (!data) return <main className="store-load-state"><div><span className="loading-spinner" /><p>Carregando a loja...</p></div></main>
+  if (loadError) return <main className="store-load-state"><div><TriunfoMark /><h1>Não foi possível carregar a loja</h1><p>{loadError}</p><button className="primary-button" onClick={() => window.location.reload()}>Tentar novamente</button></div></main>
+  if (!data) return <main className="store-load-state" role="status"><div><TriunfoMark /><span className="loading-spinner" /><p>Carregando a loja...</p></div></main>
   const operation = data.operation || { state: 'open', accepting_orders: true, will_schedule: false, scheduled_for: null, message: '' }
   if (view === 'checkout') return <Checkout items={cart} store={data.store} plan={data.plan} operation={operation} onBack={() => setView('menu')} onSuccess={(created) => { setOrder(created); setView('success'); setCart([]) }} />
   if (view === 'success') return <Success order={order} store={data.store} onReset={() => setView('menu')} />
