@@ -65,6 +65,7 @@ class ImportTavaresMenu extends Command
                             'name' => $name,
                             'slug' => Str::slug($name),
                             'description' => $description,
+                            'image_url' => $this->image($name),
                             'price_cents' => $price,
                             'active' => true,
                         ]);
@@ -101,6 +102,53 @@ class ImportTavaresMenu extends Command
         } finally {
             $context->clear();
         }
+    }
+
+    /** Foto (Unsplash) por título do produto; sem entrada, o produto fica sem imagem. */
+    private function image(string $name): ?string
+    {
+        $ids = [
+            'Picanha' => '1767974968707-db3d448d4ef3',
+            'Carne (fraldinha)' => '1779474989201-fe2d22ff3f79',
+            'Cupim' => '1775263895193-00169142a6d5',
+            'Frango' => '1775379995350-43098b52d8ed',
+            'Porco' => '1735279944608-5f0f05334904',
+            'Tripa' => '1598401863352-3de5501f4890',
+            'Coração de frango' => '1779358964755-75464e144187',
+            'Coração de boi' => '1626323109252-0adb3b46692b',
+            'Linguiça' => '1591989330748-777649e84466',
+            'Asa de frango' => '1783788357923-649e29b7b006',
+            'Queijo' => '1695754146526-5bab379f597a',
+            'Medalhão de carne' => '1654876203651-64761cbcc5cc',
+            'Medalhão de frango' => '1757961047502-0c0351ae7a48',
+            'Medalhão de queijo' => '1695754146526-5bab379f597a',
+            'Medalhão de ovo de codorna' => '1775263895193-00169142a6d5',
+            'Kafta com queijo' => '1779883804052-7250ffc9d276',
+            'Espeto especial de camarão e queijo' => '1788603970138-4edbdaf80cc4',
+            'Espeto de camarão' => '1569172131007-4954763443d2',
+            'Batata frita (300 g)' => '1630431341636-999a7e047f3b',
+            'Bolinho (12 unidades)' => '1767974963436-2208b3553561',
+            'Pastelo (12 unidades)' => '1781446842582-0c30c427cd66',
+            'Pão de alho' => '1556008531-57e6eefc7be4',
+            'Caldinho de camarão' => '1659603606213-cb19636f9f34',
+            'Caldinho de feijão preto' => '1665088127661-83aeff6104c4',
+            'Arroz de leite' => '1536304993881-ff6e9eefa2a6',
+            'Arroz de camarão' => '1512058564366-18510be2db19',
+            'Arroz P' => '1536304993881-ff6e9eefa2a6',
+            'Arroz G' => '1536304993881-ff6e9eefa2a6',
+            'Baião P' => '1626266799523-941311ea2273',
+            'Baião G' => '1626266799523-941311ea2273',
+            'Feijão verde Mini' => '1564707919-233dd0c17c56',
+            'Feijão verde P' => '1564707919-233dd0c17c56',
+            'Feijão verde G' => '1564707919-233dd0c17c56',
+            'Feijão verde especial' => '1564707919-233dd0c17c56',
+            'Caranguejo combo com 3' => '1580841129862-bc2a2d113c45',
+            'Caldo de caranguejo' => '1659603606213-cb19636f9f34',
+        ];
+
+        return isset($ids[$name])
+            ? "https://images.unsplash.com/photo-{$ids[$name]}?auto=format&fit=crop&w=900&q=85"
+            : null;
     }
 
     /** @return array<int, array{name: string, skewer?: bool, items: array<int, array{0: string, 1: int, 2: ?string}>}> */
