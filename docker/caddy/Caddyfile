@@ -40,7 +40,7 @@ www.{$DOMAIN} {
 
 # Lojas: um host por loja até o TLS sob demanda ser configurado.
 # O Host da requisição chega intacto ao PHP, que resolve a loja pelo domínio.
-rafalanches.{$DOMAIN}, triunfotec.{$DOMAIN} {
+rafalanches.{$DOMAIN}, triunfotec.{$DOMAIN}, tavares-spettus.{$DOMAIN} {
 	import common
 
 	handle /api/* {
