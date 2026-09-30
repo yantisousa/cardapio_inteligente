@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
 
         TenantSetting::create([
             'store_name' => 'Forno & Afeto',
+            'banner_url' => 'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1100&q=90',
             'tagline' => 'Receitas artesanais, feitas para compartilhar.',
             'primary_color' => '#e85d37',
             'accent_color' => '#183c2d',

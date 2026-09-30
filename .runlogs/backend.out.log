@@ -3265,3 +3265,397 @@
   2026-09-29 19:33:44 /api/storefront .......................................................................... ~ 6s
   Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
   2026-09-29 19:34:44 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:35:44 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:36:44 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:37:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:38:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:39:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:40:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:41:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:42:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:43:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:44:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:04 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:05 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:05 /api/admin/menu ......................................................................... ~ 12s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:12 /api/admin/settings ...................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:18 /api/storefront .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:19 /api/admin/orders ........................................................................ ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:25 /api/admin/menu .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:26 /api/admin/settings ...................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:32 /api/media/01a0da49-8e7c-73b7-b3e8-dfc8d35c49da/ef04e23b-292a-4d1f-a3df-97f027eeb584.png . ~ 2s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:33 /api/admin/orders ........................................................................ ~ 2s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:36 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:44 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:45:52 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:46:00 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:46:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:46:51 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:47:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:47:52 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:48:45 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:48:46 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:49:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:49:51 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:50:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:50:52 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:51:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:51:51 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:52:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:52:45 /api/admin/orders ........................................................................ ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:53:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:53:51 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:54:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:54:52 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:55:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:55:51 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:56:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:56:45 /api/admin/orders ........................................................................ ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:57:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:57:45 /api/admin/orders ........................................................................ ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:58:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:58:45 /api/admin/orders ........................................................................ ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:59:45 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 19:59:45 /api/storefront .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:00:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:01:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:02:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:03:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:04:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:05:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:06:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:07:40 /api/storefront .......................................................................... ~ 9s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:07:49 /api/admin/orders ........................................................................ ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:07:49 /api/storefront .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:07:50 /api/admin/menu ......................................................................... ~ 12s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:07:56 /api/admin/settings ...................................................................... ~ 7s
+  2026-09-29 20:08:02 .......................................................................................... ~ 1s
+  2026-09-29 20:08:03 ...................................................................................... ~ 3.01ms
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:08:03 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:08:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:09:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:10:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:11:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:12:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:13:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:14:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:15:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:16:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:17:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:18:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:19:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:20:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:21:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:22:45 /api/storefront .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:23:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:24:45 /api/storefront .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:25:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:26:45 /api/storefront .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:27:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:28:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:29:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:30:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:31:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:32:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:33:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:34:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:35:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:36:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:37:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:38:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:39:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:40:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:41:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:42:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:43:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:44:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:45:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:46:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:47:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:48:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:49:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:50:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:51:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:52:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:53:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:54:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:55:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:56:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:57:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:58:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 20:59:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:00:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:01:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:02:45 /api/storefront ......................................................................... ~ 13s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:03:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:04:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:05:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:06:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:07:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:08:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:09:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:10:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:11:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:12:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:13:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:14:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:15:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:16:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:17:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:18:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:19:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:20:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:21:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:22:45 /api/storefront .......................................................................... ~ 5s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:23:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:24:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:25:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:26:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:27:45 /api/storefront .......................................................................... ~ 8s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:28:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:29:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:30:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:31:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:32:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:33:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:34:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:35:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:36:45 /api/storefront .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:37:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:38:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:39:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:40:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:41:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:42:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:43:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:44:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:45:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:46:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:47:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:48:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:49:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:50:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:51:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:52:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:53:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:54:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:55:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:56:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:57:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:58:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 21:59:45 /api/storefront .......................................................................... ~ 9s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:00:29 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:00:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:01:02 /api/media/01a0da49-8e7c-73b7-b3e8-dfc8d35c49da/0cf2e763-bbe8-481b-acd7-7c9409052281.png . ~ 1s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:01:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:02:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:03:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:04:45 /api/storefront ......................................................................... ~ 16s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:05:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:06:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:07:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:08:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:09:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:10:43 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:10:49 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:11:45 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:12:45 /api/storefront .......................................................................... ~ 7s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:13:24 /api/storefront .......................................................................... ~ 6s
+  Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  2026-09-29 22:13:45 /api/storefront .......................................................................... ~ 6s

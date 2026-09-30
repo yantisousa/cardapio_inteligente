@@ -72,6 +72,7 @@ class CreateTenant extends Command
 
             TenantSetting::create([
                 'store_name' => $name,
+                'banner_url' => 'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1100&q=90',
                 'storefront_content' => [
                     'hero_badge' => 'Estamos abertos',
                     'hero_title' => 'Comida que abraça a',
